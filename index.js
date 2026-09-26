@@ -63,6 +63,8 @@ const renderOrbitzInElement = (parentContainerId) => {
     }
   }
 
+  let rafId = null;
+
   function tick() {
     ctx.clearRect(0, 0, W, H);
     ctx.beginPath();
@@ -72,7 +74,7 @@ const renderOrbitzInElement = (parentContainerId) => {
       e.draw();
       e.update(oldObjects);
     });
-    window.requestAnimationFrame(tick);
+    rafId = window.requestAnimationFrame(tick);
   }
 
   const sun = new Sphere(W / 2, H / 2, 40000, new V(0, 0));
@@ -83,7 +85,14 @@ const renderOrbitzInElement = (parentContainerId) => {
   objects.push(planet1);
   objects.push(planet2);
 
-  window.requestAnimationFrame(tick);
+  rafId = window.requestAnimationFrame(tick);
+
+  // Stops the animation and takes the demo off the page. Call it when the
+  // page showing the demo closes; otherwise the loop keeps running forever.
+  return function stop() {
+    window.cancelAnimationFrame(rafId);
+    canvas.remove();
+  };
 };
 
 export default renderOrbitzInElement;
