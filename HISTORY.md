@@ -10,6 +10,14 @@ This is the whole history of the orbitz demo, newest first, written for someone 
 
 *Written from the git history on 26.0925 and checked against the code of each day. From then on, each pull request carries its own entry, and it is added here automatically when the pull request merges.*
 
+## October 2026
+
+**orbitz #1: the demo stops when you leave its page** · [PR #1](https://github.com/travis-horton/orbitz/pull/1) · merged 26.1002.1017 · v1.1.3
+- **[Stops when asked](https://github.com/travis-horton/orbitz/commit/a417e72)** · merged 26.1002.1017
+  Fixed: after you left the demo's page on travish.com, the planets kept being drawn on every screen refresh out of sight, and each visit added another copy. The demo now hands the website a way to stop it, which ends the animation and removes the drawing area. (The website starts using it in its own change.)
+- **[A plain-language history](https://github.com/travis-horton/orbitz/commit/b70392b)** · merged 26.1002.1017
+  Behind the scenes: a new page, HISTORY.md, tells the project's whole story in plain words from 21.0701 on, with a version number for each step (it is at 1.1.2), and each future change adds its own entry automatically.
+
 ## June 2024
 
 **Code tidy** · [commit](https://github.com/travis-horton/orbitz/commit/9a1bd27) · merged 24.0606.1256 · v1.1.2
