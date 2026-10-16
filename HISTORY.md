@@ -12,6 +12,9 @@ This is the whole history of the orbitz demo, newest first, written for someone 
 
 ## October 2026
 
+**orbitz #3: the change log keeper, refreshed (current checkout step)** · [PR #3](https://github.com/travis-horton/orbitz/pull/3) · merged 26.1016.0937 · v1.1.5
+- Behind the scenes: the automatic job that writes this change log now uses version 7 of GitHub's checkout step instead of version 4, and passes what it saves to GitHub as a list rather than one long line of text. The entries it writes, their version numbers and their tags are the same as before.
+
 **orbitz #2: the change log catches up on entries it missed** · [PR #2](https://github.com/travis-horton/orbitz/pull/2) · merged 26.1015.0727 · v1.1.4
 - Behind the scenes: the robot that writes this file after each change now also writes in any earlier finished change it missed, oldest first, with a "recorded late" note when it is more than an hour late. If GitHub won't answer one of its lookups, it skips only that one, records the newest change anyway, and fills the gap on a later run.
 
